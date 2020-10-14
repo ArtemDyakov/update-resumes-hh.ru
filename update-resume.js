@@ -19,7 +19,7 @@ async function getCookie() {
 }
 
 async function updateResume(resumeID) {
-  const browser = await puppeteer.launch( {headless: false, slowMo: 20} )
+  const browser = await puppeteer.launch( {headless: true, slowMo: 20} )
   const page = await browser.newPage()
   await page.setUserAgent(UserAgent)
   const cookiesString = await fs.readFile('./cookies.json')

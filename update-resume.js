@@ -22,7 +22,7 @@ async function updateResume(resumeID) {
   const browser = await puppeteer.launch( {headless: true, slowMo: 20} )
   const page = await browser.newPage()
   await page.setUserAgent(UserAgent)
-  const cookiesString = await fs.readFile('./cookies.json')
+  const cookiesString = await fs.readFile(__dirname+'/cookies.json')
   const cookies = JSON.parse(cookiesString)
   await page.setCookie(...cookies)
   await page.goto('https://spb.hh.ru/resume/'+resumeID)

@@ -15,7 +15,6 @@ async function getCookie() {
   await page.goto('https://spb.hh.ru/login')
   const cookies = await page.cookies()
   await fs.writeFile('./cookies.json', JSON.stringify(cookies, null, 2))
-  await browser.close()
 }
 
 async function updateResume(resumeID) {
